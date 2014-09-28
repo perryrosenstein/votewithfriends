@@ -1,0 +1,161 @@
+body {
+	background-color: #f8f8f8;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+	  Helvetica, Arial, "Lucida Grande", sans-serif;	
+	font-size: 12px;
+}
+
+.section {
+	padding: 10px;
+}
+
+.vwf-container {
+	background-color: white;
+	max-width: 600px;
+	width: 100%;
+}
+
+#banner {
+	background-color: #69b0ff;	
+	text-align: center;
+}
+
+#banner h1 {
+	color: white;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+#banner h1 .banner-vote {
+	font-weight: bold;
+}
+
+#decision {
+	background-color: #f8f8f8;
+	border-bottom: 1px solid #ddd;
+	color: black;
+	font-size: 14px;
+	text-align: center;
+}
+
+#decision .arrow-left {
+	float: left;
+}
+
+#decision .arrow-right {
+	float: right;
+}
+
+#choices {
+	padding: 0;
+}
+
+#choices li.choice {
+	clear: left;
+	border-bottom: 1px solid #ddd;
+	padding: 10px;
+}
+
+#choices li.choice:last-child {
+	border-bottom: 0px solid #ddd;
+}
+
+#choices .pic {
+	float: left;
+	height: 120px; /* a bit of a hack but oh well, life is short */
+	margin-right: 10px;
+	vertical-align: top;
+}
+
+#choices .pic img {
+	border: 1px solid #ddd;
+	border-radius: 500px;
+	height: 60px;
+	width: 60px;
+}
+
+#choices .info {
+	margin-top: 10px;
+	vertical-align: top;
+}
+
+#choices .info .fb-like {
+	height: 57px;
+	width: 225px;
+}
+
+#choices .info .endorse-button {
+	border: 1px solid #69b0ff;
+	border-radius: 4px;
+	color: #69b0ff;
+	float: right;
+	padding: 4px 12px;
+}
+
+#choices .info .endorse-button-selected {
+	background-color: #69b0ff;
+	color: white;
+}
+
+#choices .info .endorse-button-selected:before {
+	content:  "\2713  ";
+}
+
+#choices .info .endorse-button-selected:after {
+	content:  "d";
+}
+
+#choices .info .title {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 6px;
+	text-transform: uppercase;
+}
+
+#choices .info .description {
+	color: #aaa;
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+
+#choices .info .endorsement-text {
+	margin-bottom: 10px;	
+}
+
+#choices .info .endorsement-text .friend-count {
+	color: #69b0ff;
+}
+
+#choices .info .endorsement-pics {
+	height: 46px;	
+}
+
+#choices .info .endorsement-pics li {
+	float: left;
+	width: 50px;
+}
+
+#choices .info .endorsement-pics li img {
+	border: 1px solid #ddd;
+	height: 46px;
+	margin-right: 10px;
+	width: 46px;
+}
+
+/* Make it not look crappy on wider screens */
+
+@media (min-width: 600px) {
+  .vwf-container {
+	border-bottom: 1px solid #ddd;
+	border-left: 1px solid #ddd;	
+	border-right: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	margin: 10px auto;	
+  }
+
+  #choices .pic img {
+	height: 100px;
+	padding: 5px;
+	width: 100px;
+  }
+}
