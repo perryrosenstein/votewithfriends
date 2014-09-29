@@ -5,9 +5,31 @@ body {
 	font-size: 12px;
 }
 
-.section {
-	padding: 10px;
+
+/* CSS FOR HOME PAGE */
+.home-container {
+  	background-color: #69b0ff;
+	color: white;
+	height: 100%;
+	padding: 0 20px;
+	text-align: center;
 }
+
+.home-container h1 {
+	font-size: 30px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+.home-container p {
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.home-container p:last-child {
+	margin-bottom: 0px;
+}
+/* CSS FOR DECISION PAGES */
 
 .vwf-container {
 	background-color: white;

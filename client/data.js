@@ -38,6 +38,7 @@ vwf = {
 				},
 				{
 					title: 'I support Ron Nehring for Lieutenant Governor.',
+					name: 'Ron Nehring',
 					subtitle: 'Republican',
 					slug: 'ron-nehring',
 					photo: 'ron-nehring.png',
