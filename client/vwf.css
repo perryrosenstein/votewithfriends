@@ -5,6 +5,9 @@ body {
 	font-size: 12px;
 }
 
+.section {
+	padding: 10px;
+}
 
 /* CSS FOR HOME PAGE */
 .home-container {
