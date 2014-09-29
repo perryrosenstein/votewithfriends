@@ -9,14 +9,14 @@
       <div id="banner" class="section">
         <h1>Vote With Friends</h1>
       </div>
-      <div id="decision" class="section">
-        <span>{{title}}</span>    
+      <div id="decision" class="section">         
         {{#if prevDecision}}
-          <a href="{{pathFor 'decision' decision=prevDecision.slug}}" class="arrow-left">&#8592;</a>
+          <a href="{{pathFor 'decision' decision=prevDecision.slug}}" class="arrow arrow-left">&#8592;</a>
         {{/if}}
         {{#if nextDecision}}
-          <a href="{{pathFor 'decision' decision=nextDecision.slug}}" class="arrow-right">&#8594;</a>
+          <a href="{{pathFor 'decision' decision=nextDecision.slug}}" class="arrow arrow-right">&#8594;</a>
         {{/if}}
+        {{title}}   
       </div>
       <ul id="choices" class="section">
         {{#each choices}}
@@ -28,13 +28,10 @@
             <div class="title">
               {{name}}
             </div>
-            {{#if party}}
-            <div class="description">
-              {{party}}
+            <div class="subtitle">
+              {{subtitle}}
             </div>
-            {{/if}}
             <div class="fb-like" data-href="http://vote2014.meteor.com/{{../slug}}/{{slug}}" data-width="225" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>                            
-
           </div>
         </li>
         {{/each}}

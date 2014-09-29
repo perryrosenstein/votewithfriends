@@ -38,6 +38,10 @@ body {
 	text-align: center;
 }
 
+#decision .arrow:visited, #decision .arrow:hover, #decision .arrow:active {
+	text-decoration: none;
+}
+
 #decision .arrow-left {
 	float: left;
 }
@@ -112,7 +116,7 @@ body {
 	text-transform: uppercase;
 }
 
-#choices .info .description {
+#choices .info .subtitle {
 	color: #aaa;
 	font-size: 14px;
 	margin-bottom: 8px;
