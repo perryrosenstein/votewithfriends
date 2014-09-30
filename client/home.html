@@ -1,13 +1,11 @@
 <template name="home">
 <div class="home-container">
   <h1>Vote With Friends</h1>
-  <p>Haven't done your homework on how to vote yet? No problem.</p>
-  <p>See how your friends have voted and why. It's fun, and will make you a better citizen.</p>
-  <p>Right now, Vote With Friends works for statewide candidate and ballot races in California.</p>
+  <p>Use Vote With Friends to see how your friends are voting and why. It's fun, and will make you a better citizen.</p>
+  <p>Right now, Vote With Friends works for statewide elections in California.</p>
   <p><a href="/governor" class="btn btn-default btn-large">Get Started!</a></p>
 </div>
 <script>
-$('body').css('background-color', '#69b0ff');
 var containerHeight = $('.home-container').height();
 var screenHeight = $(window).height();
 $('.home-container').css('margin-top', (screenHeight - containerHeight) / 2);

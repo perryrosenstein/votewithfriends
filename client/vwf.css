@@ -11,9 +11,7 @@ body {
 
 /* CSS FOR HOME PAGE */
 .home-container {
-  	background-color: #69b0ff;
-	color: white;
-	height: 100%;
+	color: black;
 	padding: 0 20px;
 	text-align: center;
 }
