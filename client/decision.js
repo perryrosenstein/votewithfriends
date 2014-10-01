@@ -33,3 +33,20 @@ Template.decision.helpers({
   }
 
 })
+
+Template.decision.rendered = function () {
+  this.autorun(function () {
+    // Register a reactive dependency on the data context (which is
+    // where we store the current decision being voted on). Learn more
+    // about "transparent reactive programming" at
+    // http://docs.meteor.com/#tracker
+    Template.currentData();
+
+    // Since we load the Facebook SDK asynchronously, it may not yet
+    // be defined
+    if (typeof FB !== 'undefined') {
+      // http://stackoverflow.com/a/10745728/1352190
+      FB.XFBML.parse();
+    }
+  });
+};
