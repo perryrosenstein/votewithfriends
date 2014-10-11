@@ -54,7 +54,7 @@ vwf = {
 				{					
 					name: 'Pete Peterson',
 					title: 'I support Pete Peterson for Secretary of State.',
-					subtitle: 'Democrat',					
+					subtitle: 'Republican',					
 					slug: 'pete-peterson',
 					photo: 'pete-peterson.png',
 				},
