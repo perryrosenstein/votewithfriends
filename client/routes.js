@@ -23,6 +23,14 @@ Router.map(function() {
 	}
   });
 
+  this.route('ballot', {
+	template: 'ballot',
+	path: '/ballot/:fbid',
+	data: function() {
+		return {fbid: parseInt(this.params.fbid, 10)};
+	}
+  });
+
   this.route('choice', {
 	template: 'decision',
     path: '/:decision/:choice',
