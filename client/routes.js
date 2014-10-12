@@ -1,5 +1,6 @@
 Router.map(function() {
   this.route('home', {path: '/'});
+  this.route('connect', {path: '/connect'});
 
   this.route('decision', { 
     path: '/:decision',

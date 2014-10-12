@@ -8,22 +8,14 @@
       version    : 'v2.1'
     });
     FB.getLoginStatus(function(response) {      
-      console.log(response);
       if (response.status === 'connected') {
-        console.log('Logged in.')
-        var uid = response.authResponse.userID;
-        var accessToken = response.authResponse.accessToken;
-      } else {
-        // FB.login(function(response) {
-        //    if (response.authResponse) {
-        //      console.log('Welcome!  Fetching your information.... ');
-        //      FB.api('/me', function(response) {
-        //        console.log('Good to see you, ' + response.name + '.');
-        //      });
-        //    } else {
-        //      console.log('User cancelled login or did not fully authorize.');
-        //    }
-        //  });
+        console.log(response)
+        if (window.location.pathname === '/connect') {
+          window.location.href = '/ballot/' + response.authResponse.userID;
+        }
+//        var uid = response.authResponse.userID;
+//        var accessToken = response.authResponse.accessToken;
+      } else {        
         console.log('Not logged in.')
       }
     });
