@@ -1,14 +1,11 @@
 <template name="home">
 <div class="home-container">
+  <div class="brand">
+    <img src="images/small-logo-white.png">
+  </div>
   <h1>Vote With Friends</h1>
-  <p>Use Vote With Friends to see how your friends are voting and why. It's fun, and will make you a better citizen.</p>
-  <p>Right now, Vote With Friends works for statewide elections in California.</p>
-  <p><a href="/governor" class="btn btn-default btn-large">Get Started!</a></p>
+  <h2>San Francisco</h2>
+  <p>See how your friends are voting and why. It's fun and will make you a better citizen.</p>
+  <p><a href="/governor" class="btn btn-default btn-large">Get Started</a></p>
 </div>
-<script>
-/* Vertically align the content */
-var containerHeight = $('.home-container').height();
-var screenHeight = $(window).height();
-$('.home-container').css('margin-top', (screenHeight - containerHeight) / 2);
-</script>
 </template>

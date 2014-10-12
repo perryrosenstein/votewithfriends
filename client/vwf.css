@@ -1,5 +1,6 @@
 body {
-	background-color: #f8f8f8;
+	background-color: #ecece9;
+	color: #444;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
 	  Helvetica, Arial, "Lucida Grande", sans-serif;	
 	font-size: 12px;
@@ -9,17 +10,43 @@ body {
 	padding: 10px;
 }
 
+.btn-default {
+	background-color: #444;
+	border-radius: 5px;	
+	color: white;
+	font-family: "HelveticaNeue", Helvetia, Arial, "Lucida Grande", sans-serif;
+	font-weight: 600;
+	padding: 12px 60px;
+}
+
 /* CSS FOR HOME PAGE */
 .home-container {
-	color: black;
+	color: #444;
 	padding: 0 20px;
 	text-align: center;
 }
 
+.home-container .brand {
+	height: 122px;
+	margin: 0 auto 30px auto;
+	padding: 0;
+	width: 212px;	
+}
+
 .home-container h1 {
-	font-size: 30px;
-	margin-bottom: 20px;
+	color: #222;
+	font-size: 24px;
+	font-weight: normal;
+	margin-bottom: 15px;
 	text-transform: uppercase;
+}
+
+.home-container h2 {
+	color: #444;
+	font-size: 20px;
+	font-style: italic;
+	font-weight: lighter;
+	margin-bottom: 30px;
 }
 
 .home-container p {
@@ -179,6 +206,10 @@ body {
 	border-right: 1px solid #ddd;
 	border-top: 1px solid #ddd;
 	margin: 10px auto;	
+  }
+
+  .home-container h1 {
+    font-size: 30px;
   }
 
   #choices .pic img {
