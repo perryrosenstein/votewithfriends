@@ -11,12 +11,20 @@ body {
 }
 
 .btn-default {
-	background-color: #444;
+	background-color: #38687e;
+	border: 0px solid #444;
 	border-radius: 5px;	
 	color: white;
 	font-family: "HelveticaNeue", Helvetia, Arial, "Lucida Grande", sans-serif;
 	font-weight: 600;
 	padding: 12px 60px;
+}
+
+.btn-default:hover {
+	background-color: #163948;
+	color: white;
+	font-family: "HelveticaNeue", Helvetia, Arial, "Lucida Grande", sans-serif;
+	font-weight: 600;
 }
 
 /* CSS FOR HOME PAGE */
@@ -27,10 +35,15 @@ body {
 }
 
 .home-container .brand {
-	height: 122px;
+	height: 136px;
 	margin: 0 auto 30px auto;
 	padding: 0;
-	width: 212px;	
+	width: 240px;	
+}
+
+.home-container .brand img {
+	height: 136px;
+	width: 240px;
 }
 
 .home-container h1 {
@@ -67,7 +80,7 @@ body {
 }
 
 #banner {
-	background-color: #69b0ff;	
+	background-color: #38687e;	
 	text-align: center;
 }
 
@@ -140,15 +153,15 @@ body {
 }
 
 #choices .info .endorse-button {
-	border: 1px solid #69b0ff;
+	border: 1px solid #38687e;
 	border-radius: 4px;
-	color: #69b0ff;
+	color: #38687e;
 	float: right;
 	padding: 4px 12px;
 }
 
 #choices .info .endorse-button-selected {
-	background-color: #69b0ff;
+	background-color: #38687e;
 	color: white;
 }
 
@@ -178,7 +191,7 @@ body {
 }
 
 #choices .info .endorsement-text .friend-count {
-	color: #69b0ff;
+	color: #38687e;
 }
 
 #choices .info .endorsement-pics {
@@ -195,6 +208,22 @@ body {
 	height: 46px;
 	margin-right: 10px;
 	width: 46px;
+}
+
+.bottom-nav {
+	background-color: #163948;	
+	padding: 10px 0;
+	text-align: center;
+}
+
+.bottom-nav a {
+	color: white;
+	display: inline-block;
+	margin-right: 50px;
+}
+
+.bottom-nav a:last-child {
+	margin-right: 0;
 }
 
 /* Make it not look crappy on wider screens */
