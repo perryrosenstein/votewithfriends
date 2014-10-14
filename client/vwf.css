@@ -219,7 +219,7 @@ body {
 .bottom-nav a {
 	color: white;
 	display: inline-block;
-	margin-right: 50px;
+	margin-right: 30px;
 }
 
 .bottom-nav a:last-child {
