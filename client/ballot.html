@@ -1,7 +1,22 @@
 <template name="ballot">
-  {{#if ballot}}
-    {{ballot}}
+  {{#with ballot}}
+    <h1>
+      <img src="https://graph.facebook.com/{{../fbid}}/picture" />
+      {{removeDashes ../name}}'s Ballot
+    </h1>
+
+    {{#each decisions}}
+      {{#if actedOnDecision}}
+        <h2>{{title}}</h2>
+        {{#each choices}}
+          <div>+1 {{title}}</div>
+        {{/each}}
+        {{#if comment}}
+          <div>"{{comment}}"</div>
+        {{/if}}
+      {{/if}}
+    {{/each}}
   {{else}}
     Loading...
-  {{/if}}
+  {{/with}}
 </template>

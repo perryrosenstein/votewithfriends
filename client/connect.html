@@ -2,8 +2,12 @@
   <script>
     var tryLogin = function () {
       FB.getLoginStatus(function(response) {
+        var fbid = response.authResponse.userID;
         if (response.status === 'connected') {
-          Router.go('/ballot/' + response.authResponse.userID, {replaceState: true});
+          FB.api("/me", function (response) {
+            Router.go('/ballot/' + response.name.replace(/ /g, "-")
+              + "/" + fbid, {replaceState: true});
+          });
         } else {
           console.log('Not logged in.')
         }
