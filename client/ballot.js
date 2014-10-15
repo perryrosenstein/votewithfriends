@@ -1,7 +1,7 @@
 Template.ballot.created = function () {
 	var self = this;
 	self.ballotData = new ReactiveVar(null);
-	
+
 	Meteor.call("votesForUser", self.data.fbid, function (err, ballotData) {
 		if (err) {
 			alert(err.message);
