@@ -1,23 +1,12 @@
 <body>
   <div id="fb-root"></div>
-  <script>  
+  <script>
   window.fbAsyncInit = function() {
+    window.fbInited = true;
     FB.init({
       appId      : APP_ID, 
       xfbml      : true,
       version    : 'v2.1'
-    });
-    FB.getLoginStatus(function(response) {      
-      if (response.status === 'connected') {
-        console.log(response)
-        if (window.location.pathname === '/connect') {
-          window.location.href = '/ballot/' + response.authResponse.userID;
-        }
-//        var uid = response.authResponse.userID;
-//        var accessToken = response.authResponse.accessToken;
-      } else {        
-        console.log('Not logged in.')
-      }
     });
   };
 
@@ -27,6 +16,6 @@
     js = d.createElement(s); js.id = id;
     js.src = "//connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));    
+    }(document, 'script', 'facebook-jssdk'));
    </script>
 </body>

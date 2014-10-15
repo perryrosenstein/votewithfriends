@@ -1,4 +1,25 @@
 <template name="connect">
+  <script>
+    var tryLogin = function () {
+      FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+          Router.go('/ballot/' + response.authResponse.userID, {replaceState: true});
+        } else {
+          console.log('Not logged in.')
+        }
+      })
+    };
+
+    if (window.fbInited) {
+      tryLogin();
+    } else {
+      var oldFbAsyncInit = window.fbAsyncInit;
+      window.fbAsyncInit = function () {
+        oldFbAsyncInit();
+        tryLogin();
+      };
+    }
+  </script>
 <div class="home-container">
   <h1>Create your ballot</h1>
   <p>We need you to connect with Facebook so we can create a page with your recommendations and comments.</p>
