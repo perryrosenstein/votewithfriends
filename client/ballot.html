@@ -1,22 +1,41 @@
 <template name="ballot">
-  {{#with ballot}}
-    <h1>
-      <img src="https://graph.facebook.com/{{../fbid}}/picture" />
-      {{removeDashes ../name}}'s Ballot
-    </h1>
-
-    {{#each decisions}}
-      {{#if actedOnDecision}}
-        <h2>{{title}}</h2>
-        {{#each choices}}
-          <div>+1 {{title}}</div>
-        {{/each}}
-        {{#if comment}}
-          <div>"{{comment}}"</div>
-        {{/if}}
-      {{/if}}
-    {{/each}}
-  {{else}}
-    Loading...
-  {{/with}}
+  <div class="vwf-container ballot-container">
+    <div id="banner" class="section">
+      <h1>Vote With Friends</h1>
+    </div>
+    <div class="section">
+      {{#with ballot}}    
+        <h1>
+          <img src="https://graph.facebook.com/{{../fbid}}/picture?width=100&height=100" />
+          {{removeDashes ../name}}'s Ballot
+        </h1>
+        <div class="ballot-decision">
+          {{#each decisions}}
+            {{#if actedOnDecision}}
+              <h2>{{title}}</h2>
+              {{#each choices}}
+                <div class="recommendation">{{../../../firstname}}{{title}}</div>
+              {{/each}}
+              {{#if comment}}
+                <div class="comment">&ldquo;{{comment}}&rdquo;</div>
+              {{/if}}
+            {{/if}}
+          {{/each}}
+        </div>
+      {{else}}
+        <h2>Loading...</h2>
+      {{/with}}
+    </div>
+    <div class="bottom-nav">
+      <a href="/connect">
+        My ballot
+      </a>
+      <a href="http://sfgov2.org/ftp/uploadedfiles/elections/ElectionsArchives/2014/Nov/Nov2014_VIP_EN.pdf" target="_blank">
+        More info (PDF)
+      </a>
+      <a href="mailto:perryr@gmail.com" target="_blank">
+        Contact us
+      </a>
+    </div>
+  </div>
 </template>

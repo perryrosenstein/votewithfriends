@@ -210,6 +210,40 @@ body {
 	width: 46px;
 }
 
+.ballot-container h1 {
+	color: #222;
+	font-size: 24px;
+	font-weight: normal;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+}
+
+.ballot-container h1 img {
+	border-radius: 25px;
+	height: 50px;
+	vertical-align: middle;	
+	width: 50px;
+}
+
+.ballot-container h1 span {
+	vertical-align: middle;
+}
+
+.ballot-container h2 {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 6px;
+	text-transform: uppercase;
+}
+
+.ballot-container .ballot-decision div {
+	margin-bottom: 10px;
+}
+
+.ballot-container .ballot-decision div:last-child {
+	margin-bottom: 20px;
+}
+
 .bottom-nav {
 	background-color: #163948;	
 	padding: 10px 0;
