@@ -14,6 +14,9 @@ var indexForSlug = function (currentSlug) {
 }
 
 Template.decision.helpers({
+  appId: function () {
+    return APP_ID;
+  },
   prevDecision: function () {
 	var currentIndex = indexForSlug(this.slug);
 	
