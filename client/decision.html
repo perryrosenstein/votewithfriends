@@ -1,47 +1,87 @@
 <template name="decision">
-  <div class="vwf-container">
-    <div id="banner" class="section">
-      <h1>Vote With Friends</h1>
-    </div>
-  {{#if error}}
-  <div class="section">Election not found. <a href="/governor">Go to the first election.</a></div>
-  {{else}}    
-      <div id="decision" class="section">         
+  <div id="banner" class="desktop-only"> 
+    <div class="vwf-container"> 
+      <div class="brand">
+        <img src="images/vote-logo.png">
+      </div>
+      <div class="decision-nav">
+        {{#if error}}  
+        {{else}}
+          <h1>{{title}}</h1>
+        {{/if}}  
+      </div>
+      <div class="prev-next-decision">
         {{#if prevDecision}}
-          <a href="{{pathFor 'decision' decision=prevDecision.slug}}" class="arrow arrow-left">&#8592;</a>
+          <a href="{{pathFor 'decision' decision=prevDecision.slug}}" class="arrow arrow-left">Previous Race</a>
         {{/if}}
         {{#if nextDecision}}
-          <a href="{{pathFor 'decision' decision=nextDecision.slug}}" class="arrow arrow-right">&#8594;</a>
+          <a href="{{pathFor 'decision' decision=nextDecision.slug}}" class="arrow arrow-right">Next Race</a>
         {{/if}}
-        {{title}}   
       </div>
-      <ul id="choices" class="section">
-        {{#each choices}}
-        <li class="choice">
-          <div class="pic">
-            <img src="/images/{{photo}}">
-          </div>
-          <div class="info">
-            <div class="title">
-              {{name}}
-            </div>
-            <div class="subtitle">
-              {{subtitle}}
-            </div>
-            <!--
-            <div class="fb-like" data-href="http://votesf.meteor.com/{{../slug}}/{{slug}}" data-width="225" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>                            
-            -->
-            <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fvotesf.meteor.com%2F{{../slug}}%2F{{slug}}&amp;width=225&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=80&amp;appId={{appId}}" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:225px; height:80px;" allowTransparency="true"></iframe>
-          </div>
+    </div>
+  </div>
+  <div id="mobile-banner" class="mobile-only">
+    <div class="vwf-container">
+      {{#if error}}  
+      {{else}}
+        <h1>{{title}}</h1>
+      {{/if}}
+    </div>
+  </div>
+  <div class="prev-next-mobile mobile-only">
+    {{#if prevDecision}}
+      <a href="{{pathFor 'decision' decision=prevDecision.slug}}" class="nav-left">Previous Race</a>
+    {{/if}}
+    {{#if nextDecision}}
+      <a href="{{pathFor 'decision' decision=nextDecision.slug}}" class="nav-right">Next Race</a>
+    {{/if}}
+  </div>
+  <div class="vwf-container">
+    {{#if error}}
+    <div class="section">
+      Election not found. <a href="/governor">Go to the first election.</a>
+    </div>
+    {{else}}
+      <ul class="main-nav">
+        <li>
+          <a href="/connect">My ballot</a>
         </li>
-        {{/each}}
+        <li>
+          <a href="/governor">Elected Officials</a>
+        </li>
+        <li>
+          <a href="/proposition-1">California Initiatives</a>
+        </li>
+        <li>
+          <a href="/proposition-a">San Francisco Initiatives</a>
+        </li>
       </ul>
-      <div class="fb-comments" data-href="http://votesf.meteor.com/{{slug}}" data-colorscheme="light" data-width="100%"></div>
-{{/if}}
-    <div class="bottom-nav">
-      <a href="/connect">
-        My ballot
-      </a>
+      <div class="choices">
+        <ul>
+          {{#each choices}}
+          <li class="choice">
+            <div class="pic">
+              <img src="/images/{{photo}}">
+            </div>
+            <div class="info">
+              <div class="title">
+                {{name}}&nbsp;&nbsp;&nbsp;<span class="subtitle">{{subtitle}}</span>
+              </div>
+              <iframe class="desktop-only" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fvotesf.meteor.com%2F{{../slug}}%2F{{slug}}&amp;width=350&amp;layout=standard&amp;action=recommend&amp;show_faces=true&amp;share=false&amp;height=80&amp;appId={{appId}}" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:350px; height:80px;" allowTransparency="true"></iframe>
+            </div>
+            <div class="facebook-recommend-mobile mobile-only">
+              <!-- MAYBE FIX: Changed height to 60px - will only show first row of photos. -->
+              <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fvotesf.meteor.com%2F{{../slug}}%2F{{slug}}&amp;width=350&amp;layout=standard&amp;action=recommend&amp;show_faces=true&amp;share=false&amp;height=60&amp;appId={{appId}}" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:350px; height:60px;" allowTransparency="true"></iframe>                        
+            </div>
+          </li>
+          {{/each}}
+        </ul>
+        <div class="fb-comments" data-href="http://votesf.meteor.com/{{slug}}" data-colorscheme="light" data-width="100%"></div>        
+      </div>
+    {{/if}}
+  </div>
+  <div class="bottom-nav">
+    <div class="vwf-container">
       <a href="http://sfgov2.org/ftp/uploadedfiles/elections/ElectionsArchives/2014/Nov/Nov2014_VIP_EN.pdf" target="_blank">
         More info (PDF)
       </a>

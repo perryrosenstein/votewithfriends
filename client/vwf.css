@@ -1,5 +1,5 @@
 body {
-	background-color: #ecece9;
+	background-color: white;
 	color: #444;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
 	  Helvetica, Arial, "Lucida Grande", sans-serif;	
@@ -23,7 +23,7 @@ body {
 .btn-default:hover {
 	background-color: #163948;
 	color: white;
-	font-family: "HelveticaNeue", Helvetia, Arial, "Lucida Grande", sans-serif;
+	font-family: "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight: 600;
 }
 
@@ -74,24 +74,57 @@ body {
 /* CSS FOR DECISION PAGES */
 
 .vwf-container {
-	background-color: white;
-	max-width: 600px;
-	width: 100%;
+	margin: 0px auto;
+	max-width: 900px;
 }
 
 #banner {
-	background-color: #38687e;	
-	text-align: center;
+	background-color: #f8f8f8;
+	border-bottom: 1px solid #ccc;
+	height: 55px;
+}
+
+#banner .brand {
+	display: inline-block;
+	margin-top: 10px;
+	width: 200px;
+}
+
+#banner .brand img {
+	height: 35px;
+	vertical-align: middle;
+	width: 60px;
+}
+
+#banner .decision-nav {
+	display: inline-block;
+	width: 480px;
 }
 
 #banner h1 {
-	color: white;
+	color: #222;
 	font-size: 20px;
+	position: relative;
 	text-transform: uppercase;
+	top: 4px;
+	vertical-align: middles;
 }
 
-#banner h1 .banner-vote {
-	font-weight: bold;
+#banner .prev-next-decision {
+	display: inline-block;
+	position: relative;
+	top: 4px;
+	width: 200px;
+}
+
+#banner .prev-next-decision a {
+	color: #444;	
+	display: inline-block;
+	font-size: 14px;
+}
+
+#banner .prev-next-decision a:first-child {
+	margin-right: 20px;
 }
 
 #decision {
@@ -102,57 +135,61 @@ body {
 	text-align: center;
 }
 
-#decision .arrow:visited, #decision .arrow:hover, #decision .arrow:active {
-	text-decoration: none;
+.main-nav {
+	display: inline-block;
+	margin-top: 20px;
+	vertical-align: top;
+	width: 200px;
 }
 
-#decision .arrow-left {
-	float: left;
+.main-nav li {
+	margin-bottom: 20px;
 }
 
-#decision .arrow-right {
-	float: right;
+.main-nav li a {
+	color: #38687e;
+	font-size: 14px;
 }
 
-#choices {
-	padding: 0;
+.choices {
+	display: inline-block;
+	width: 690px;
 }
 
-#choices li.choice {
+.choices ul li.choice {
 	clear: left;
-	border-bottom: 1px solid #ddd;
-	padding: 10px;
+	margin-bottom: 30px;
+	padding: 10px 0;
 }
 
-#choices li.choice:last-child {
+.choices ul li.choice:last-child {
 	border-bottom: 0px solid #ddd;
 }
 
-#choices .pic {
+.choices ul li .pic {
 	float: left;
-	height: 120px; /* a bit of a hack but oh well, life is short */
-	margin-right: 10px;
+	margin-right: 24px;
 	vertical-align: top;
 }
 
-#choices .pic img {
-	border: 1px solid #ddd;
-	border-radius: 500px;
+.choices .pic img {
+	border-radius: 50px;
 	height: 60px;
+	padding: 0;
 	width: 60px;
 }
 
-#choices .info {
+.choices .info {
 	margin-top: 10px;
 	vertical-align: top;
 }
 
-#choices .info .fb-like {
+.choices .info .fb-like {
 	height: 57px;
 	width: 225px;
 }
 
-#choices .info .endorse-button {
+.choices .info .endorse-button {
 	border: 1px solid #38687e;
 	border-radius: 4px;
 	color: #38687e;
@@ -160,50 +197,43 @@ body {
 	padding: 4px 12px;
 }
 
-#choices .info .endorse-button-selected {
+.choices .info .endorse-button-selected {
 	background-color: #38687e;
 	color: white;
 }
 
-#choices .info .endorse-button-selected:before {
-	content:  "\2713  ";
-}
-
-#choices .info .endorse-button-selected:after {
-	content:  "d";
-}
-
-#choices .info .title {
+.choices .info .title {
 	font-size: 16px;
 	font-weight: bold;
-	margin-bottom: 6px;
+	margin-bottom: 15px;
 	text-transform: uppercase;
 }
 
-#choices .info .subtitle {
+.choices .info .subtitle {
 	color: #aaa;
 	font-size: 14px;
-	margin-bottom: 8px;
+	font-weight: normal;
+	text-transform: none;
 }
 
-#choices .info .endorsement-text {
+.choices .info .endorsement-text {
 	margin-bottom: 10px;	
 }
 
-#choices .info .endorsement-text .friend-count {
+.choices .info .endorsement-text .friend-count {
 	color: #38687e;
 }
 
-#choices .info .endorsement-pics {
+.choices .info .endorsement-pics {
 	height: 46px;	
 }
 
-#choices .info .endorsement-pics li {
+.choices .info .endorsement-pics li {
 	float: left;
 	width: 50px;
 }
 
-#choices .info .endorsement-pics li img {
+.choices .info .endorsement-pics li img {
 	border: 1px solid #ddd;
 	height: 46px;
 	margin-right: 10px;
@@ -246,7 +276,7 @@ body {
 
 .bottom-nav {
 	background-color: #163948;	
-	padding: 10px 0;
+	padding: 100px 0;
 	text-align: center;
 }
 
@@ -260,25 +290,71 @@ body {
 	margin-right: 0;
 }
 
-/* Make it not look crappy on wider screens */
-
-@media (min-width: 600px) {
-  .vwf-container {
-	border-bottom: 1px solid #ddd;
-	border-left: 1px solid #ddd;	
-	border-right: 1px solid #ddd;
-	border-top: 1px solid #ddd;
-	margin: 10px auto;	
+@media (max-width: 900px) {
+  #mobile-banner {
+	border-bottom: 1px solid #ccc;
+	padding: 20px 0;
+	text-align: center;
+	width: 100%;
   }
-
-  .home-container h1 {
-    font-size: 30px;
+  #mobile-banner h1 {
+	color: #222;
+    font-size: 18px;
+    font-weight: bold;	
+    text-transform: uppercase;
   }
+  .prev-next-mobile {
+	border-bottom: 1px solid #ccc;
+	height: 34px;
+    padding: 10px;	
+  }
+  .prev-next-mobile a {
+	color: #222;
+	font-size: 14px;
+  }
+  .prev-next-mobile .nav-left {
+    float: left;	
+  }
+  .prev-next-mobile .nav-right {
+    float: right;	
+  }
+  .main-nav {
+	display: none;
+  }
+  .choices {
+	width: 100%;
+  }
+  .choices ul li.choice {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+  }
+  /* Sure, turn a span tag into a block element! Welcome to hacksville. */
+  .choices ul li.choice .subtitle {
+	display: block;
+	margin-top: 10px;
+	width: 100%;
+  }
+  .choices ul li.choice .info {
+    margin-bottom: 6px;	
+  }
+  .choices ul li.choice .facebook-recommend-mobile {
+    margin-bottom: 20px;
+	margin-top: 25px;
+	width: 100%;
+  }
+  .bottom-nav {
+    padding: 24px 0;	
+  }
+  
+  .desktop-only {
+	display: none;
+  }
+}
 
-  #choices .pic img {
-	border: 0px solid #ddd;
-	height: 100px;
-	padding: 5px;
-	width: 100px;
+@media (min-width: 901px) {
+  .mobile-only {
+	display: none;
   }
 }
