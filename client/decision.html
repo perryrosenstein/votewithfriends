@@ -57,6 +57,9 @@
         </li>
       </ul>
       <div class="choices">
+        {{#if summary}}
+          <p class="summary">{{summary}}</p>
+        {{/if}}
         <ul>
           {{#each choices}}
           <li class="choice">
