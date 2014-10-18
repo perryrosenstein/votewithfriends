@@ -20,14 +20,27 @@
       </div>
     </div>
   </div>
-  <div id="mobile-banner" class="mobile-only">
-    <div class="vwf-container">
-      {{#if error}}  
-      {{else}}
-        <h1>{{title}}</h1>
-      {{/if}}
+  <nav class="navbar navbar-default mobile-only" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>          
+          <span class="icon-bar"></span>     
+        </button>
+        <a class="navbar-brand" href="#">{{title}}</a>
+      </div>
     </div>
-  </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/connect">My ballot</a></li>
+        <li><a href="/governor">Elected Officials</a></li>
+        <li><a href="/proposition-1">California Initiatives</a></li>
+        <li><a href="/proposition-a">San Francisco Initiatives</a></li>
+      </ul>
+    </div>
+  </nav>
   <div class="prev-next-mobile mobile-only">
     {{#if prevDecision}}
       <a href="{{pathFor 'decision' decision=prevDecision.slug}}" class="nav-left">Previous Race</a>
@@ -43,18 +56,10 @@
     </div>
     {{else}}
       <ul class="main-nav">
-        <li>
-          <a href="/connect">My ballot</a>
-        </li>
-        <li>
-          <a href="/governor">Elected Officials</a>
-        </li>
-        <li>
-          <a href="/proposition-1">California Initiatives</a>
-        </li>
-        <li>
-          <a href="/proposition-a">San Francisco Initiatives</a>
-        </li>
+        <li><a href="/connect">My ballot</a></li>
+        <li><a href="/governor">Elected Officials</a></li>
+        <li><a href="/proposition-1">California Initiatives</a></li>
+        <li><a href="/proposition-a">San Francisco Initiatives</a></li>
       </ul>
       <div class="choices">
         {{#if summary}}
