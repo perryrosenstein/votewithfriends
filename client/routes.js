@@ -55,7 +55,10 @@ Router.map(function() {
 	  $('meta[property="og:title"]').attr('content', choice.title);
 	  $('meta[property="og:url"]').attr('content', window.location.href);
 	  $('meta[property="og:image"]').attr('content', window.location.origin + "/images/" + choice.photo);
-	
+	  if (decision.summary) {
+		  $('meta[property="description"]').attr('content', decision.summary);	
+		  $('meta[property="og:description"]').attr('content', decision.summary);		
+	  }
 	  return decision;
 	}
   });
