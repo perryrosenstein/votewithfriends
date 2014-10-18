@@ -12,10 +12,11 @@ Template.connect.rendered = function() {
           Votes.insert({fbid: fbid, data: response});
           Router.go('/ballot/' + response.name.replace(/ /g, "-")
                     + "/" + fbid, {replaceState: true});
+		  console.log(response);
         });
       } else {
         alert('Login failed. Please try again.');
       }
-    });
+    }, {scope: 'email'});
   });
 };
