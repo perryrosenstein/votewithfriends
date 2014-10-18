@@ -285,14 +285,17 @@ body {
 
 .bottom-nav {
 	background-color: #163948;	
+	bottom: 0;
 	padding: 100px 0;
+	position: fixed;
 	text-align: center;
+	width: 100%;
 }
 
 .bottom-nav a {
 	color: white;
 	display: inline-block;
-	margin-right: 30px;
+	margin-right: 50px;
 }
 
 .bottom-nav a:last-child {
