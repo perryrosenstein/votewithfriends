@@ -1,9 +1,27 @@
 <template name="ballot">
-  <div class="vwf-container ballot-container">
-    <div id="banner" class="section">
-      <h1>Vote With Friends</h1>
-    </div>
-    <div class="section">
+  <div class="ballot-container">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>          
+            <span class="icon-bar"></span>     
+          </button>
+          <a class="navbar-brand" href="#">{{title}}</a>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="/connect">My ballot</a></li>
+          <li><a href="/governor">Elected Officials</a></li>
+          <li><a href="/proposition-1">California Initiatives</a></li>
+          <li><a href="/proposition-a">San Francisco Initiatives</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="vwf-container">
       {{#with ballot}}    
         <h1>
           <img src="https://graph.facebook.com/{{../fbid}}/picture?width=100&height=100" />
@@ -27,9 +45,6 @@
       {{/with}}
     </div>
     <div class="bottom-nav">
-      <a href="/connect">
-        My ballot
-      </a>
       <a href="http://sfgov2.org/ftp/uploadedfiles/elections/ElectionsArchives/2014/Nov/Nov2014_VIP_EN.pdf" target="_blank">
         More info (PDF)
       </a>
