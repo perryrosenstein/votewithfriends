@@ -18,8 +18,10 @@ Router.map(function() {
 		
 	  $('meta[property="og:title"]').attr('content', decision.title);
 	  $('meta[property="og:url"]').attr('content', window.location.href);
-	  $('meta[property="og:image"]').attr('content', decision.choices[0].photo);	
-	  $('')
+	  if (decision.summary) {
+		  $('meta[property="description"]').attr('content', decision.summary);	
+		  $('meta[property="og:description"]').attr('content', decision.summary);		
+	  }
 	  return decision;
 	}
   });
