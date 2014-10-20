@@ -52,7 +52,6 @@ Router.map(function() {
 	  
 	  if (!decision || !choice)
 	    return {error: true};
-
 	  
 	  $('meta[property="og:title"]').attr('content', choice.title);
 	  $('meta[property="og:url"]').attr('content', window.location.href);
