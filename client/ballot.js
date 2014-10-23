@@ -35,10 +35,7 @@ Template.ballot.helpers({
     console.log(result);
     return result;
 
-  }
-});
-
-Template.ballot.helpers({
+  },
   actedOnDecision: function () {
     return this.comment || !_.isEmpty(this.choices);
   },

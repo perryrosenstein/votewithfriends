@@ -47,7 +47,6 @@ userCommentOnUrl = function (fbId, url) {
 Meteor.methods({
   votesForUser: function (fbId) {
     // XXX rewrite to use FB Graph batch calls
-
     var result = {};
     _.each(vwf.decisions, function (decision) {
       var decisionUrl = "http://votesf.meteor.com/" +

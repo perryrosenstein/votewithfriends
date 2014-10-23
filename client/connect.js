@@ -10,7 +10,7 @@ Template.connect.rendered = function() {
       if (response.authResponse) {
         FB.api("/me", function (response) {
           Votes.insert({fbid: fbid, data: response});
-          Router.go('/ballot/' + response.name.replace(/ /g, "-")
+          Router.go('/ballot/' + response.first_name.replace(/ /g, "-")
                     + "/" + fbid, {replaceState: true});
 		  console.log(response);
         });

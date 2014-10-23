@@ -257,11 +257,12 @@ body {
 	text-transform: uppercase;
 }
 
-.ballot-container h1 img {
+.ballot-container h1 img, .ballot-container .navbar-brand img  {
 	border-radius: 25px;
-	height: 50px;
+	height: 40px;
+	margin-right: 10px;
 	vertical-align: middle;	
-	width: 50px;
+	width: 40px;
 }
 
 .ballot-container h1 span {
@@ -302,6 +303,9 @@ body {
 }
 
 @media (max-width: 900px) {
+  .desktop-only {
+	display: none;
+  }	
   .navbar-default {
     margin-bottom: 0;	
   }
@@ -327,9 +331,6 @@ body {
   }
   .prev-next-mobile .nav-right {
     float: right;	
-  }
-  .main-nav {
-	display: none;
   }
   .choices {
 	width: 100%;
@@ -360,10 +361,9 @@ body {
   }
   .bottom-nav {
     padding: 24px 0;	
-  }
-  
-  .desktop-only {
-	display: none;
+  }  
+  .ballot-container .navbar-toggle {
+	margin-top: 15px;
   }
 }
 
