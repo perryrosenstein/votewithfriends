@@ -11,6 +11,7 @@ Template.connect.rendered = function() {
         FB.api("/me", function (response) {
           Votes.insert({fbid: fbid, data: response});
           Router.go('/ballot/' + response.first_name.replace(/ /g, "-")
+                    + response.last_name.replace(/ /g, "-")
                     + "/" + fbid, {replaceState: true});
 		  console.log(response);
         });

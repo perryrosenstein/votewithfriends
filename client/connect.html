@@ -6,6 +6,7 @@
         if (response.status === 'connected') {
           FB.api("/me", function (response) {
             Router.go('/ballot/' + response.first_name.replace(/ /g, "-")
+             + "/" + response.last_name.replace(/ /g, "-")
               + "/" + fbid, {replaceState: true});
           });
         } else {

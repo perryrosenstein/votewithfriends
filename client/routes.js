@@ -28,7 +28,7 @@ Router.map(function() {
 
   this.route('ballot', {
 	template: 'ballot',
-	path: '/ballot/:name/:fbid',
+	path: '/ballot/:firstName/:lastName/:fbid',
 	data: function() {
           return this.params;
 	}
