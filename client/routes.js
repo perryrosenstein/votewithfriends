@@ -26,9 +26,9 @@ Router.map(function() {
 	}
   });
 
-  this.route('ballot', {
+  this.route('guide', {
 	template: 'ballot',
-	path: '/ballot/:firstName/:lastName/:fbid',
+	path: '/guide/:firstName/:lastName/:fbid',
 	data: function() {
 		var ogTitle = this.params.firstName + " " + this.params.lastName + "'s Voter Guide";
 		var ogImage = "https://graph.facebook.com/" + this.params.fbid + "/picture?height=400&width=400";
