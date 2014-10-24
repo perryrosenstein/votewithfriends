@@ -50,7 +50,7 @@ Meteor.methods({
           batches.push([]);
         batches[batches.length-1].push({
           method: "GET",
-          relative_url: linkObjectId + "/likes"
+          relative_url: linkObjectId + "/likes?limit=1000"
         });
       });
     });
