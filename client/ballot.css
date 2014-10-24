@@ -19,8 +19,7 @@
 }
 
 .ballot-container .bottom-nav {
-	bottom: 0;
-	position: fixed;
+  display: none;
 }
 
 @media (max-width: 900px) {
