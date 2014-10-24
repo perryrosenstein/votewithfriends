@@ -33,9 +33,8 @@ Router.map(function() {
 		var ogTitle = this.params.firstName + " " + this.params.lastName + "'s Voter Guide";
 		var ogImage = "https://graph.facebook.com/" + this.params.fbid + "/picture?height=400&width=400";
 		$('meta[property="og:title"]').attr('content', ogTitle);
-		$('meta[property="og:url"]').attr('content', window.location.href);
-		$('meta[property="og:image"]').attr('content', ogImage);
-        
+		$('meta[property="og:image"]').attr('content', ogImage); 
+		$('meta[property="og:url"]').attr('content', window.location.href);		       
 		return this.params;
 	}
   });
