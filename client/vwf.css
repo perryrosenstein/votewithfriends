@@ -383,6 +383,9 @@ body {
   .bottom-nav {
     padding: 24px 0;	
   }  
+  .ballot-container .choices {
+    margin-left: 20px;	
+  }
   .ballot-container .navbar-toggle {
 	margin-top: 15px;
   }
