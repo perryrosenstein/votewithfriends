@@ -32,11 +32,13 @@ Router.map(function() {
 	data: function() {
 		var ogTitle = this.params.firstName + " " + this.params.lastName + "'s Voter Guide";
 		var ogImage = "https://graph.facebook.com/" + this.params.fbid + "/picture?height=400&width=400";
+		var ogDescription = "See how " + this.params.firstName + " is voting in this year's elections at Vote With Friends."
 		$('meta[property="og:title"]').attr('content', ogTitle);
 		$('meta[property="og:image"]').attr('content', ogImage); 
 		$('meta[property="og:image:width"]').attr('content', 400);
 		$('meta[property="og:image:height"]').attr('content', 400);
-		$('meta[property="og:url"]').attr('content', window.location.href);		       
+		$('meta[property="og:url"]').attr('content', window.location.href);	
+		$('meta[property="og:description"]').attr('content', ogDescription);		       
 		return this.params;
 	}
   });
