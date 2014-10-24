@@ -1,6 +1,8 @@
 Template.ballot.created = function () {
   var self = this;
 
+  Meteor.subscribe("commentsForUser", self.data.fbid);
+
   if (!Session.get("ballotData")) {
     Meteor.call("votesForUser", self.data.fbid, function (err, ballotData) {
       if (err) {
@@ -12,7 +14,46 @@ Template.ballot.created = function () {
   }
 };
 
+var getCurrentFbId = function () {
+  FB.getLoginStatus(function (response) {
+    Session.set("loggedInFbId", response.authResponse.userID);
+  });
+};
+
+Meteor.startup(function () {
+  if (window.fbInited) {
+    getCurrentFbId();
+  } else {
+    var oldFbAsyncInit = window.fbAsyncInit;
+    window.fbAsyncInit = function () {
+      oldFbAsyncInit();
+      getCurrentFbId();
+    };
+  }
+});
+
+Template.ballot.events({
+  'click .editComment': function () {
+    Session.set("editingCommentForDecision", this.slug);
+  },
+
+  'click .saveComment': function (evt, tmpl) {
+    var set = {$set: {}};
+    set.$set["decisions." + this.slug] = tmpl.find(".editComment-" + this.slug).value;
+    Comments.update(Comments.findOne()._id, set);
+    Session.set("editingCommentForDecision", null);
+  }
+});
+
 Template.ballot.helpers({
+  isMe: function () {
+    return Template.instance().data.fbid === Session.get("loggedInFbId");
+  },
+
+  editingComment: function () {
+    return Session.get("editingCommentForDecision") === this.slug;
+  },
+
   ballot: function () {
     var ballot = Session.get("ballotData");
     if (!ballot)
@@ -21,8 +62,12 @@ Template.ballot.helpers({
     // constuct a clone of `vwf.decisions` that has comments added to it,
     // and only the choices that were actually voted for
     var result = {decisions: _.map(EJSON.clone(vwf.decisions), function (decision) {
-      var decisionWithComment = _.extend(
-        {}, decision, {comment: ballot[decision.slug].comment});
+      var decisionWithComment = _.extend({}, decision);
+      if (Comments.findOne()) {
+        decisionWithComment = _.extend(decisionWithComment, {
+          comment: Comments.findOne().decisions[decision.slug]
+        });
+      }
 
       decisionWithComment.choices = _.filter(
         decisionWithComment.choices, function (choice) {
