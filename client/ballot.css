@@ -1,3 +1,25 @@
 .comment {
-    white-space: pre;
+	margin-bottom: 8px;
+	font-size: 16px;
+	white-space: pre-wrap;    
+}
+
+.edit-comment-container {
+	width: 500px;
+}
+
+.edit-comment-container textarea {
+	height: 5em;	
+	width: 100%;
+}
+
+.edit-comment-container .save-comment {
+	margin-top: 2px;
+	text-align: right;
+}
+
+@media (max-width: 900px) {
+	.edit-comment-container {
+		width: 300px;
+	}
 }

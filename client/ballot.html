@@ -57,17 +57,21 @@
                   </div>
                 {{/each}}
                 {{#if editingComment}}
-                  <textarea class="editComment editComment-{{slug}}">{{comment}}</textarea>
-                  <a class="btn btn-primary saveComment">save</a>
+                  <div class="edit-comment-container">
+                    <textarea class="editComment editComment-{{slug}}">{{comment}}</textarea>
+                    <div class="save-comment">
+                      <a class="btn btn-primary saveComment">save</a>
+                    </div>
+                  </div>
                 {{else}}
                   {{#if comment}}
-                    <div class="comment">&ldquo;{{comment}}&rdquo;</div>
+                    <div class="comment">{{comment}}</div>
                     {{#if isMe}}
-                      <a class="btn editComment">edit</a>
+                      <a class="btn editComment">edit reason</a>
                     {{/if}}
                   {{else}}
                     {{#if isMe}}
-                      <a class="btn editComment">+ add comment</a>
+                      <a class="btn editComment">+ add a reason</a>
                     {{/if}}
                   {{/if}}
                 {{/if}}
