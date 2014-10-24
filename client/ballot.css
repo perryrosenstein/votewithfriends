@@ -18,6 +18,11 @@
 	text-align: right;
 }
 
+.ballot-container .bottom-nav {
+	bottom: 0;
+	position: fixed;
+}
+
 @media (max-width: 900px) {
 	.edit-comment-container {
 		width: 300px;

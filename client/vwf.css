@@ -106,7 +106,7 @@ body {
 
 #banner h1 {
 	color: #222;
-	font-size: 20px;
+	font-size: 16px;
 	position: relative;
 	text-transform: uppercase;
 	top: 4px;
@@ -258,11 +258,11 @@ body {
 }
 
 .ballot-container h1 img, .ballot-container .navbar-brand img  {
-	border-radius: 25px;
-	height: 40px;
-	margin-right: 10px;
+	border-radius: 15px;
+	height: 30px;
+	margin-right: 8px;
 	vertical-align: middle;	
-	width: 40px;
+	width: 30px;
 }
 
 .ballot-container h1 span {
@@ -276,10 +276,11 @@ body {
 
 .ballot-container h2 {
 	font-size: 20px;
-	margin-bottom: 12px;
+	margin-bottom: 6px;
 }
 
 .ballot-container h2.ballot-loading {
+	margin-left: 20px;
 	margin-top: 20px;
 }
 
@@ -291,12 +292,14 @@ body {
 .ballot-container .recommendation img {
 	border-radius: 15px;
 	height: 30px;
+	margin-right: 6px;
 	vertical-align: middle;
 	width: auto;
 }
 
 .ballot-container .recommendation .choice-name {
 	font-weight: bold;
+	vertical-align: middle;
 }
 
 .ballot-container .ballot-decision {
@@ -311,8 +314,7 @@ body {
 
 .bottom-nav {
 	background-color: #163948;	
-	bottom: 0;
-	padding: 60px 0;
+	padding: 20px 0;
 	text-align: center;
 	width: 100%;
 }
@@ -335,9 +337,8 @@ body {
     margin-bottom: 0;	
   }
   .navbar-default .navbar-brand {
-	color: #444;
-    font-size: 18px;
-    font-weight: bold;	
+	color: #222;
+    font-size: 16px;
 	line-height: 1em;
 	max-width: 80%;
     text-transform: uppercase;
@@ -387,11 +388,12 @@ body {
   .bottom-nav {
     padding: 24px 0;	
   }  
-  .ballot-container .choices {
-    margin-left: 20px;	
-  }
   .ballot-container .navbar-toggle {
 	margin-top: 15px;
+  }
+  .ballot-container .ballot-decision, .ballot-container .ballot-fb-like {
+	margin-left: 20px;
+	margin-right: 20px;
   }
 }
 
