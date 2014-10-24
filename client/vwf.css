@@ -279,6 +279,10 @@ body {
 	margin-bottom: 12px;
 }
 
+.ballot-container h2.ballot-loading {
+	margin-top: 20px;
+}
+
 .ballot-container .recommendation {
 	margin-bottom: 8px;
 	font-size: 16px;
