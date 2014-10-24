@@ -17,7 +17,9 @@ Template.ballot.created = function () {
 
 var getCurrentFbId = function () {
   FB.getLoginStatus(function (response) {
-    Session.set("loggedInFbId", response.authResponse.userID);
+    if (response && response.authResponse) {
+      Session.set("loggedInFbId", response.authResponse.userID);
+    }
   });
 };
 
