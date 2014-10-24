@@ -6,8 +6,8 @@ Template.connect.rendered = function() {
 
   $("#connect-with-facebook").click(function() {
     FB.login(function(response) {
-      var fbid = response.authResponse.userID;
-      if (response.authResponse) {
+      if (response.authResponse && response.authResponse.userID) {
+        var fbid = response.authResponse.userID;
         FB.api("/me", function (response) {
           Votes.insert({fbid: fbid, data: response});
           Router.go('/guide/' + response.first_name.replace(/ /g, "-")

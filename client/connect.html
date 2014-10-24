@@ -2,8 +2,8 @@
   <script>
     var tryLogin = function () {
       FB.getLoginStatus(function(response) {
-        var fbid = response.authResponse.userID;
         if (response.status === 'connected') {
+          var fbid = response.authResponse.userID;
           FB.api("/me", function (response) {
             Router.go('/guide/' + response.first_name.replace(/ /g, "-")
              + "/" + response.last_name.replace(/ /g, "-")
