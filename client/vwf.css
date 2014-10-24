@@ -279,6 +279,10 @@ body {
 	margin-bottom: 6px;
 }
 
+.ballot-container h2 a {
+	color: #444;
+}
+
 .ballot-container h2.ballot-loading {
 	margin-left: 20px;
 	margin-top: 20px;

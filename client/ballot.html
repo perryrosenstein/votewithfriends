@@ -49,7 +49,7 @@
           {{#each decisions}}
             {{#if actedOnDecision}}
               <div class="ballot-decision">
-                <h2>{{title}}</h2>
+                <h2><a href="/{{slug}}">{{title}}</a></h2>
                 {{#each choices}}
                   <div class="recommendation">
                     <img src="/images/{{photo}}">
