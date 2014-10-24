@@ -6,7 +6,8 @@ Template.ballot.created = function () {
   if (!Session.get("ballotData")) {
     Meteor.call("votesForUser", self.data.fbid, function (err, ballotData) {
       if (err) {
-	alert(err.message);
+		alert(err.message);
+		$('.ballot-loading img').hide();	
       } else {
 	Session.set("ballotData", ballotData);
       }
