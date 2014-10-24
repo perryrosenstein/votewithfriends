@@ -276,6 +276,11 @@ body {
 	text-transform: uppercase;
 }
 
+.ballot-container .ballot-decision {
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
 .ballot-container .ballot-decision div {
 	margin-bottom: 10px;
 }

@@ -41,7 +41,10 @@
         <li><a href="/proposition-1">California Initiatives</a></li>
         <li><a href="/proposition-a">San Francisco Initiatives</a></li>
       </ul>
-      <div class="ballot-decision choices">      
+      <div class="ballot-decision choices">
+        <div class="ballot-fb-like">
+          <fb:like layout="button_count" href="http://votesf.meteor.com/ballot/{{firstName}}/{{lastName}}/{{fbid}}" action="recommend" show_faces="false" share="true"></fb:like>      
+        </div>
         {{#with ballot}}    
           {{#each decisions}}
             {{#if actedOnDecision}}
