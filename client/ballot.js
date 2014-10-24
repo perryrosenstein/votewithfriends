@@ -38,6 +38,10 @@ Template.ballot.events({
   },
 
   'click .saveComment': function (evt, tmpl) {
+    if (!Comments.findOne()) {
+      Comments.insert({_id: Template.parentData(1).fbid});
+    }
+
     var set = {$set: {}};
     set.$set["decisions." + this.slug] = tmpl.find(".editComment-" + this.slug).value;
     Comments.update(Comments.findOne()._id, set);
