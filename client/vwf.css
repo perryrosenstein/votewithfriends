@@ -269,24 +269,40 @@ body {
 	vertical-align: middle;
 }
 
+.ballot-container .ballot-fb-like {	
+	margin-bottom: 30px;
+	margin-top: 20px;
+}
+
 .ballot-container h2 {
+	font-size: 20px;
+	margin-bottom: 12px;
+}
+
+.ballot-container .recommendation {
+	margin-bottom: 8px;
 	font-size: 16px;
+}
+
+.ballot-container .recommendation img {
+	border-radius: 15px;
+	height: 30px;
+	vertical-align: middle;
+	width: auto;
+}
+
+.ballot-container .recommendation .choice-name {
 	font-weight: bold;
-	margin-bottom: 6px;
-	text-transform: uppercase;
 }
 
 .ballot-container .ballot-decision {
 	margin-bottom: 20px;
-	margin-top: 20px;
 }
 
-.ballot-container .ballot-decision div {
-	margin-bottom: 10px;
-}
-
-.ballot-container .ballot-decision div:last-child {
-	margin-bottom: 20px;
+.ballot-container a.editComment {
+	padding-left: 0;
+	padding-top: 0;
+	text-transform: uppercase;
 }
 
 .bottom-nav {

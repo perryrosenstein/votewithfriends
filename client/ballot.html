@@ -41,32 +41,37 @@
         <li><a href="/proposition-1">California Initiatives</a></li>
         <li><a href="/proposition-a">San Francisco Initiatives</a></li>
       </ul>
-      <div class="ballot-decision choices">
+      <div class="choices">
         <div class="ballot-fb-like">
           <fb:like layout="button_count" href="http://votesf.meteor.com/ballot/{{firstName}}/{{lastName}}/{{fbid}}" action="recommend" show_faces="false" share="true"></fb:like>      
         </div>
         {{#with ballot}}    
           {{#each decisions}}
             {{#if actedOnDecision}}
-              <h2>{{title}}</h2>
-              {{#each choices}}
-                <div class="recommendation">{{../../../firstname}}{{title}}</div>
-              {{/each}}
-              {{#if editingComment}}
-                <textarea class="editComment editComment-{{slug}}">{{comment}}</textarea>
-                <a class="btn btn-primary saveComment">save</a>
-              {{else}}
-                {{#if comment}}
-                  <div class="comment">&ldquo;{{comment}}&rdquo;</div>
-                  {{#if isMe}}
-                    <a class="btn btn-primary editComment">edit</a>
-                  {{/if}}
+              <div class="ballot-decision">
+                <h2>{{title}}</h2>
+                {{#each choices}}
+                  <div class="recommendation">
+                    <img src="/images/{{photo}}">
+                    {{../../../firstName}} recommends <span class="choice-name">{{name}}</span>.
+                  </div>
+                {{/each}}
+                {{#if editingComment}}
+                  <textarea class="editComment editComment-{{slug}}">{{comment}}</textarea>
+                  <a class="btn btn-primary saveComment">save</a>
                 {{else}}
-                  {{#if isMe}}
-                    <a class="btn btn-primary editComment">add comment</a>
+                  {{#if comment}}
+                    <div class="comment">&ldquo;{{comment}}&rdquo;</div>
+                    {{#if isMe}}
+                      <a class="btn editComment">edit</a>
+                    {{/if}}
+                  {{else}}
+                    {{#if isMe}}
+                      <a class="btn editComment">+ add comment</a>
+                    {{/if}}
                   {{/if}}
                 {{/if}}
-              {{/if}}
+              </div>              
             {{/if}}
           {{/each}}
       {{else}}
